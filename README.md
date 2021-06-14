@@ -1,2 +1,2 @@
 # NineQingMvWeb
-NineQingMvWeb(玖卿视频APP后端网站源码)
+NineQingMvWeb(玖卿视频APP对接苹果CMS后端网站源码)
