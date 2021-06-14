@@ -1,0 +1,62 @@
+<?php include "block_header.htm";?>
+    <body>
+        <div class="x-body layui-anim layui-anim-up"> 
+            <blockquote class="layui-elem-quote"> 欢迎您，<?=$username;?>管理员！<?php if(strpos($_SERVER['PHP_SELF'],'/admin/')!==false){ echo '<font color="red">安全提醒：检测到您的后台目录名称还是默认的 admin，请及时更改后台文件夹名称！</font>';}?>
+            </blockquote>
+            <fieldset class="layui-elem-field">
+            <legend>系统信息</legend>
+                    <table class="layui-table">
+                        <tbody>
+                            <tr>
+                                <th>当前域名</th>
+                                <td><?php echo filter_input(INPUT_SERVER, "SERVER_NAME"); ?></td></tr>
+                            <tr>
+                                <th>系统时间</th>
+                                <td id="time"></td></tr>
+                            <tr>
+                                <th>OS版本</th>
+                                <td><?php echo php_uname('s') . php_uname('r'); ?></td></tr>
+
+                            <tr>
+                                <th>运行环境</th>
+                                <td><?php echo filter_input(INPUT_SERVER, "SERVER_SOFTWARE"); ?></td></tr>
+                            <tr>
+                                <th>PHP版本</th>
+                                <td><?php echo PHP_VERSION ?></td></tr>
+                            <tr>
+                                <th>技术QQ：</th>
+                                <td>1036706612</td></tr>								
+                            <tr>
+                                <th>版权所有</th>
+                                <td><a  target="__blank" href="https://mv.nineqing.com/"><font color=\'#0000ff\'>玖卿影院</font></a></td></tr>
+                            <tr>
+                                <th>当前播放器的接口</th>
+                                <td><font color="red">http://<?=$_SERVER['HTTP_HOST'];?>/ckplayer/index.php?url=</font></td></tr>								
+                        </tbody>
+                    </table>            
+            </fieldset>
+		    <blockquote class="layui-elem-quote layui-quote-nm">欢迎访问官方主页获取帮助：<a href="https://mv.nineqing.com/" target="_blank"><font color=\'#0000ff\'>https://mv.nineqing.com/</font></a>，播放器仅供技术研究使用，请勿用于非法用途！</blockquote>	
+        </div>
+
+       <script>
+       
+var timerID = setInterval(updateTime, 1000);
+updateTime();
+function updateTime() {
+    var cd = new Date();
+    var time=zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+    var data=zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth()+1, 2) + '-' + zeroPadding(cd.getDate(), 2);   
+    $('#time').text(data+" "+time);
+};
+function zeroPadding(num, digit) {
+    var zero = '';
+    for(var i = 0; i < digit; i++) {
+        zero += '0';
+    }
+    return (zero + num).slice(-digit);
+}
+ 
+ </script>
+        
+    </body>
+</html>

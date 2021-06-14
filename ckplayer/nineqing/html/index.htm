@@ -1,0 +1,161 @@
+<?php include "block_header.htm"; ?>
+    <body>
+        <!-- 顶部开始 -->
+        <div class="container">
+            <div class="logo"><a href="./">玖卿影院-ckplayer X播放器管理</a></div>
+            <div class="left_open">
+                <i title="展开左侧栏" class="iconfont">&#xe699;</i>
+            </div>
+            <ul class="layui-nav right" lay-filter="">
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><?php echo $username?$username:'admin' ?></a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                         <dd><a onclick="x_admin_show('管理员密码修改', 'load.php?url=admin_edit.htm',460,300)" href="javascript:;">修改密码</a></dd>
+                        <dd><a href="./login.php?action=logout">安全退出</a></dd>             
+                    </dl>
+                </li>
+                <li class="layui-nav-item to-index"><a href="./" target="_blank">前台首页</a></li>
+            </ul>
+        </div>
+        <!-- 顶部结束 -->
+        <!-- 中部开始 -->
+        <!-- 左侧菜单开始 -->
+        <div class="left-nav">
+            <div id="side-nav">
+                <ul id="nav">
+                    <li>
+                        <a _href="load.php?url=admin_system.htm">
+                            <i class="iconfont">&#xe6ae;</i>
+                            <cite>播放器基本设置</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>  
+                    <li>
+                        <a _href="load.php?url=pre_system.htm">
+                            <i class="iconfont">&#xe6ae;</i>
+                            <cite>前置广告设置</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="load.php?url=pause_system.htm">
+                            <i class="iconfont">&#xe6ae;</i>
+                            <cite>暂停广告设置</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe6a3;</i>
+                            <cite>常见问题解决办法</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a _href="http://www.ckplayer.com/manualX/12.html">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>移动端注意事项</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a _href="http://www.ckplayer.com/manualX/52.html">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>有声音无画面</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a _href="http://www.ckplayer.com/manualX/53.html">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>不能边加载边播放</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a _href="http://www.ckplayer.com/manualX/54.html">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>视频不能播放</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a _href="http://www.ckplayer.com/manualX/56.html">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>m3u8视频问题</cite>
+                                </a>
+                            </li>							
+						</ul>	
+                    </li>
+					
+                    <li>
+                        <a href="javascript:;">
+                            <i class="iconfont">&#xe6b4;</i>
+                            <cite>站长工具</cite>
+                            <i class="iconfont nav_right">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a _href="https://c.runoob.com/front-end/854">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>正则调试</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a _href="https://tool.lu/js/">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>JS加解密</cite>
+                                </a>
+                            </li>
+                             <li>
+                             <li>
+                                <a _href="https://c.runoob.com/front-end/703">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>MD5加密</cite>
+                                </a>
+                            </li>
+                             <li>    
+                            </li>
+                              <li>
+                                <a _href="https://c.runoob.com/">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>综合工具</cite>
+                                </a>
+                            </li>
+                            <li>
+                                <a _href="load.php?url=unicode.htm">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>图标对应字体</cite>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="x-slide_left"></div> -->
+        <!-- 左侧菜单结束 -->
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+            <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+                <ul class="layui-tab-title">
+                    <li class="home"><i class="layui-icon">&#xe68e;</i>后台首页</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <iframe src='load.php?url=admin_body.htm' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-content-bg"></div>
+        <!-- 右侧主体结束 -->
+        <!-- 中部结束 -->
+        <!-- 底部开始 -->
+
+        <!-- 底部结束 -->
+    <script>
+       layui.use(['form', 'layer'], function () {
+            $ = layui.jquery;
+            var form = layui.form ,layer = layui.layer;     
+	   });
+ </script>
+    </body>
+</html>
